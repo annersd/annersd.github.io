@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>annersd — making things annersd</title>
+<meta name="description" content="Making things annersd means rethinking common concepts to make them better. At the crossroads of experience and innovation, we find new solutions to old problems." />
+<link rel="icon" href="assets/walnut.png" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="annersd — making things annersd" />
+<meta property="og:description" content="Rethinking common concepts to make them better. New solutions to old problems, from fresh eyes and unorthodox approaches." />
+<meta property="og:image" content="https://annersd.github.io/assets/walnut.png" />
+<meta property="og:url" content="https://annersd.github.io/" />
+<style>
+  :root {
+    --bg: #100c09; --bg2: #17110c; --card: #1b1410; --border: #2e241b;
+    --fg: #f4ece2; --muted: #a89279; --accent: #e2a45f; --accent2: #c9743a;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #fffcf7; --bg2: #faf4ea; --card: #ffffff; --border: #e8dccb;
+      --fg: #241a12; --muted: #6d5c4a; --accent: #a3611f; --accent2: #82461a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+  code { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; font-size: .92em; }
+
+  /* hero */
+  header.hero {
+    background:
+      radial-gradient(900px 380px at 12% -12%, color-mix(in srgb, var(--accent) 26%, transparent), transparent),
+      radial-gradient(760px 340px at 92% 4%, color-mix(in srgb, var(--accent2) 22%, transparent), transparent),
+      var(--bg);
+    border-bottom: 1px solid var(--border); padding: 72px 0 60px;
+  }
+  .avatar {
+    width: 132px; height: 132px; border-radius: 50%; display: block; object-fit: cover;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 34px -10px rgba(0,0,0,.55), 0 0 0 6px color-mix(in srgb, var(--accent) 12%, transparent);
+    margin-bottom: 26px;
+  }
+  h1 { font-size: clamp(2.4rem, 8vw, 3.9rem); margin: 0 0 14px; letter-spacing: -0.035em; }
+  h1 .grad { background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .tagline { font-size: clamp(1.15rem, 3vw, 1.5rem); font-weight: 600; margin: 0 0 8px; letter-spacing: -0.01em; }
+  .lead { color: var(--muted); font-size: 1.1rem; max-width: 52ch; margin: 0 0 30px; }
+
+  .quote {
+    border-left: 3px solid var(--accent); padding: 4px 0 4px 22px; margin: 0 0 22px;
+    font-size: clamp(1.1rem, 2.8vw, 1.42rem); line-height: 1.5; font-weight: 500;
+    letter-spacing: -0.012em; max-width: 40ch;
+  }
+  .quote em { color: var(--accent); font-style: normal; font-weight: 600; }
+
+  .refline { margin: 0; font-size: 14.5px; color: var(--muted); }
+  .refline .sep { margin: 0 10px; opacity: .55; }
+
+  section { padding: 56px 0; }
+  h2 { font-size: 1rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 22px; }
+
+  .manifesto {
+    background: var(--bg2); border: 1px solid var(--border); border-radius: 16px;
+    padding: 30px 32px; font-size: 1.1rem; line-height: 1.7; max-width: 68ch; margin: 0 0 20px;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chips span {
+    font-size: 13px; color: var(--muted); border: 1px solid var(--border);
+    background: var(--card); border-radius: 999px; padding: 6px 13px;
+  }
+
+  /* project — compact */
+  .project { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; }
+  .phead { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
+  .phead h3 { margin: 0; font-size: 1.15rem; letter-spacing: -0.012em; }
+  .chip {
+    font-size: 11.5px; letter-spacing: .03em; color: var(--muted);
+    border: 1px solid var(--border); background: var(--bg2); border-radius: 999px; padding: 3px 9px;
+  }
+  .pdesc { color: var(--muted); margin: 0 0 10px; max-width: 66ch; font-size: 14.5px; }
+  .tags { margin: 0; font-size: 13px; color: var(--muted); opacity: .85; }
+  .tags i { font-style: normal; opacity: .5; margin: 0 7px; }
+
+  footer { padding: 38px 0 64px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="avatar" src="assets/walnut.png" alt="annersd" width="132" height="132" />
+    <h1><span class="grad">annersd</span></h1>
+    <p class="tagline">Making things annersd.</p>
+    <p class="lead">Rethinking common concepts to make them better.</p>
+
+    <blockquote class="quote">
+      Everyone said it didn’t work — then someone who <em>didn’t know that</em> came along and just did it.
+    </blockquote>
+
+    <p class="refline">
+      On the power of not knowing better:
+      <a href="https://www.forbes.com/sites/peterhinssen/2017/10/18/the-role-of-ignorance-in-innovation/">The Role of Ignorance in Innovation ↗</a>
+      <span class="sep">·</span>
+      <a href="https://github.com/annersd">GitHub ↗</a>
+    </p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Approach</h2>
+    <p class="manifesto">
+      At the crossroads of experience and innovation, we find new solutions to old problems.
+      Our team values fresh eyes and unorthodox approaches, breaking down barriers that once
+      seemed insurmountable. Witness a new era of problem-solving with us.
+    </p>
+    <div class="chips">
+      <span>Fresh eyes</span>
+      <span>Unorthodox approaches</span>
+      <span>New solutions to old problems</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Projects</h2>
+    <div class="project">
+      <div class="phead">
+        <h3>Conduit for Claude Code</h3>
+        <span class="chip">Private preview</span>
+      </div>
+      <p class="pdesc">
+        Your Claude subscription as a local OpenAI- &amp; Anthropic-compatible API — through the
+        genuine Claude Code CLI, never a third-party proxy. Includes a VS Code model provider.
+      </p>
+      <p class="tags">
+        OpenAI&nbsp;+&nbsp;Anthropic <i>·</i> Execution profiles <i>·</i> Tool calling <i>·</i>
+        Extended thinking <i>·</i> Vision <i>·</i> VS&nbsp;Code provider
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="https://github.com/annersd">github.com/annersd</a>
+  </div>
+</footer>
+
+</body>
+</html>
